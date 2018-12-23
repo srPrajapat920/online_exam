@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+<h3>specs covered</h3>
+<img src="app/assets/images/specs.png"/>
