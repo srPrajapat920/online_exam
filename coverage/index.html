@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-12-24T02:19:17+05:30">2018-12-24T02:19:17+05:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-12-24T17:23:36+05:30">2018-12-24T17:23:36+05:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -1197,13 +1197,13 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  before_action :logged_in, only: %i[index show]</code>
+          <code class="ruby">  before_action :logged_in, only: [:index, :show]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  before_action :admin_user, only: %i[edit update new destroy]</code>
+          <code class="ruby">  before_action :admin_user, only: [:edit, :update, :new, :destroy]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -1678,13 +1678,13 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  before_action :logged_in, only: %i[index show]</code>
+          <code class="ruby">  before_action :logged_in, only: [:index, :show]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  before_action :admin_user, only: %i[edit new destroy]</code>
+          <code class="ruby">  before_action :admin_user, only: [:edit, :new, :destroy]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -2322,13 +2322,13 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  before_action :logged_in, only: %i[index show]</code>
+          <code class="ruby">  before_action :logged_in, only: [:index, :show]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  before_action :admin_user, only: %i[edit new destroy]</code>
+          <code class="ruby">  before_action :admin_user, only: [:edit, :new, :destroy]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -2779,13 +2779,13 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  before_action :logged_in, only: %i[show edit]</code>
+          <code class="ruby">  before_action :logged_in, only: [:show, :edit]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  before_action :admin_user, only: %i[index edit destroy]</code>
+          <code class="ruby">  before_action :admin_user, only: [:index, :edit, :destroy]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">
@@ -5242,7 +5242,7 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  root &#39;user#new&#39;</code>
+          <code class="ruby">  root &#39;users#new&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">

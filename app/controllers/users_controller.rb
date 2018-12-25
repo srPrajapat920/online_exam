@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :logged_in, only: %i[show edit]
-  before_action :admin_user, only: %i[index edit destroy]
+  skip_before_action :verify_authenticity_token
+  before_action :logged_in, only: [:show, :edit]
+  before_action :admin_user, only: [:index, :edit, :destroy]
   def new
     @user = User.new
     respond_to do |format|
@@ -69,6 +70,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :email_id, :password, :contact_no, :level)
+    params.permit(:username, :email_id, :password, :contact_no, :level)
   end
 end

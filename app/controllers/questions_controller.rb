@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class QuestionsController < ApplicationController
-  before_action :logged_in, only: %i[index show]
-  before_action :admin_user, only: %i[edit update new destroy]
+  before_action :logged_in, only: [:index, :show]
+  before_action :admin_user, only: [:edit, :update, :new, :destroy]
 
   def new
     @question = Question.new

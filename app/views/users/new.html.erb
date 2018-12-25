@@ -1,0 +1,80 @@
+  <%= render partial: "partial/header" %>
+    <div class="container">    
+      <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 
+        col-sm-offset-2">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <div class="panel-title">Sign Up</div>
+            
+          </div>  
+          <div class="panel-body" >
+            <form id="signupform" class="form-horizontal" role="form">                
+              <div id="signupalert" style="display:none" class="alert alert-danger">
+                 <p>Error:</p>
+              </div>                      
+                               
+              <div class="form-group">
+                <label for="firstname"  class="col-md-3 control-label">First Name</label>
+                <div class="col-md-9">
+                  <input type="text" id="Firstname" class="form-control" name="firstname" placeholder="First Name">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="lastname"  class="col-md-3 control-label">Last Name</label>
+                <div class="col-md-9">
+                  <input type="text" id="Lastname" class="form-control" name="lastname" placeholder="Last Name">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="Contact_no" class="col-md-3 control-label">Contact_no</label>
+                <div class="col-md-9">
+                  <input type="text" id="Contact_no" class="form-control" name="Contact_no" placeholder="Contact_no">
+                </div>
+              </div>     
+              <div class="form-group">
+                <label for="email" class="col-md-3 control-label">Email</label>
+                <div class="col-md-9">
+                  <input type="text" id="Email" class="form-control" name="email" placeholder="Email Address">
+                </div>
+              </div>     
+              <div class="form-group">
+                <label for="password" class="col-md-3 control-label">Password</label>
+                <div class="col-md-9">
+                  <input type="password" id="Password" class="form-control" name="passwd" placeholder="Password">
+                </div>
+              </div>
+             <div class="form-group">
+                <label for="Level" class="col-md-3 control-label">Level</label>
+                <div class="col-md-4">
+                  <select  id="Level" class="form-control">
+                    <option selected="">fresher</option>
+                    <option>intermediate</option>
+                    <option>experienced</option>
+                  </select>
+                </div>
+              </div>  
+              <div class="form-group">
+                                    <!-- Button -->                                        
+                <div class="col-md-offset-3 col-md-9">
+                  <button id="Signup" type="button" class="btn btn-info">&nbsp Sign Up</button>
+                  <span style="margin-left:8px;">or</span>  
+                </div>
+              </div>                
+
+              <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
+                <div class="col-md-offset-3 col-md-9">
+                  <button id="Signin" type="button" class="btn btn-primary">Sign in</button>
+                </div>                                                   
+              </div>
+            </form>
+          </div>
+        </div>        
+      </div> 
+    </div>
+  </body>
+  <script type="text/javascript">
+    jQuery(document).ready(function(){
+      var pageLoaded = new SignUp.pageLoaded();
+    });
+  </script>
+</html>
