@@ -15,7 +15,7 @@ Home.pageLoaded.prototype= {
  		  success: function(result){
         var data = result.subjects;
    		  $.each(data, function (i, item) {
-     		  var row = '<button class="subshow ml20 " value="'+item.id+'" style=" all: unset; display:inline-block;"><div class="panel panel-tile bg-dark text-center br-a br-light"><div class="panel-body "><i class="glyphicon glyphicon-book text-muted fs45 br64 bg-dark dark p15 ph20 mt10"></i><h3>'+item.name+'</h3></div></div></button>';
+     		  var row = '<button class="subshow ml20 " value="'+item.id+'" style=" all: unset; display:inline-block;"><div class="panel-tile bg-dark text-center br-a br-light"><div class="panel-body "><i class="glyphicon glyphicon-book text-muted fs45 br64 bg-dark dark p15 ph20 mt10"></i><h3>'+item.name+'</h3></div></div></button>';
           $(".data").append(row);
    		  });
  		  },
