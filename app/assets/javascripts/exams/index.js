@@ -27,7 +27,7 @@ Exams.pageLoaded.prototype= {
             className:'btn  btn-primary ',
             extension:'.pdf',
             exportOptions: {
-            columns: [ 0, 1, 2, 3, 5, 6 ]
+            columns: [ 1, 2, 3, 5, 6 ]
             }
           }]
         });
@@ -75,6 +75,9 @@ Exams.pageLoaded.prototype= {
     });
     $(document).on('click','.users', function(){
       window.open("/users","_self")
+    });
+    $(document).on('click','.link', function(){
+      window.open("/tests","_self")
     });
   }
 }

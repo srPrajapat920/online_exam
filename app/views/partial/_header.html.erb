@@ -25,7 +25,7 @@
           width:130px;
         }
         .log{
-          display:none !important;
+          width:10% !important;
         }
         header{
           height: 60px !important;
@@ -37,36 +37,56 @@
           width: 30px;
           height: 30px;
         }
-        li .link{
-          display: none !important;
+        .dropdown menu-merge{
+          all:unset;
+        }
+        .panel{
+          margin: auto!important;
+        }
+        .dropdown-toggle{
+          all:unset !important;
+        }
+        .panel-tile{
+          left:15%;
+          width: 100% !important;
+        }
+        .sbtn{
+          width: 50%!important;
+        }
+        .sbtn button{
+          width: auto!important;
         }
         #divFloatTimer{
+          width: 25%!important;
           top:60px !important;
           height:30px !important;
+        }
+        #timer{
+          width: auto!important;
+        }
+        .text{
+          display: none!important;
         }
       }
     </style>
   </head>
   <body>
     <header style="box-shadow: 0 3px 3px rgba(0,0,0,0.12) !important;"class=" mb40 navbar navbar-fixed-top bg-dark">
-        <div class="navbar-branding  ">
+        <div class="navbar-branding link ">
           <a class="navbar-brand width" href="dashboard.html">
             <img src="/assets/gkm-logo.png">
           </a>       
         </div>
-        <ul class="mt40 nav navbar-nav">
-          <li class="link">Home</li>
-        </ul>
         <ul class=" log nav navbar-nav navbar-right">      
           <li class="dropdown menu-merge">
-            <a href="dashboard.html#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
               <%if current_user %>
                 <img src="/assets/avtar.png" alt="avatar" class="mw45 br64">
-                <b><%= current_user.username %></b>
+                <b class=""><%= current_user.username %></b>
                 <input type="hidden"id="hidden" value="<%= current_user.id %>"name="hidden">
               <%end%>
             </a>
-            <ul class="dropdown-menu" role="menu">
+            <ul class="dropdown-menu"  role="menu">
               <li>
                 <a class="logout">Logout</a>
               </li>

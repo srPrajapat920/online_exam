@@ -105,6 +105,7 @@ Question.pageLoaded.prototype= {
         dataType:"json",
         success:function(result){
           var qdata = result.question;
+          $(".col-sm-8 .question").val(qdata.name);
           $(".col-sm-8 #optiona").val(qdata.option_a);
           $(".col-sm-8 #optionb").val(qdata.option_b);
           $(".col-sm-8 #optionc").val(qdata.option_c);
@@ -275,6 +276,9 @@ Question.pageLoaded.prototype= {
     });
     $(document).on('click','.users', function(){
       window.open("/users","_self")
+    });
+    $(document).on('click','.link', function(){
+      window.open("/tests","_self")
     });
   },
 }

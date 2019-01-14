@@ -64,6 +64,9 @@ SignUp.pageLoaded.prototype= {
   signin:function(){
     $(".col-sm-9 #SignIn").click(function(){
       window.open("/login","_self")
-    })
+    });
+    $(document).on('click','.link', function(){
+      window.open("/tests","_self")
+    });
   }
 }

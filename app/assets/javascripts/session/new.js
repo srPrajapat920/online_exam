@@ -31,11 +31,9 @@ SignIn.pageLoaded.prototype= {
           }
         },
         error:function (jqXHR, textStatus, errorThorwn){
-          var msg = jqXHR.responseJSON.errors.toSource(); 
-          msg = msg.replace(/[{()}]/g,"").replace(/[["]/g,'').replace(/]/g,'').replace(/:/g,'-')
           $.notify({
             icon: 'glyphicon glyphicon-warning-sign',
-            message:msg,
+            message:"Incorrect email_id or password",
             target:'_blank',
           },{
             element:'body',
@@ -59,6 +57,9 @@ SignIn.pageLoaded.prototype= {
     }
     $("#lastdiv #Signup").click(function(){
       window.open("/","_self")
-    })
+    });
+    $(document).on('click','.link', function(){
+      window.open("/tests","_self")
+    });
   }
 }

@@ -133,5 +133,8 @@ Users.pageLoaded.prototype= {
     $(document).on('click','.users', function(){
       window.open("/users","_self")
     });
+    $(document).on('click','.link', function(){
+      window.open("/tests","_self")
+    });
   },
 }
