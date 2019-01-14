@@ -1,0 +1,218 @@
+<%= render partial: "partial/adminheader" %>   
+      <section id="content_wrapper" id="top">
+        <section id="content" class="table-layout">
+          <div class="tray tray-center"  style="height: 640px;">
+            <h4 class="headtop"></h4>
+            <div class="panel" id="spy3">
+              <div class="panel-heading">
+                <span class="panel-title">
+                <div class="pull-right hidden-xs">    
+                  <a class="label label-success" id="newsub"><i class="glyphicon glyphicon-plus"></i>Add Question</a>
+                </div>  
+                </span>Questions</span>
+              </div>
+              <div class="panel-body pn">
+                <div class="bs-component">
+                  <table class="table table-hover table-bordered mbn table-responsive">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th colspan="8">Question</th>
+                        <th>ques_type</th>
+                        <th>status</th>
+                        <th colspan="2">action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="Subject">
+                    </tbody>
+                  </table>
+                </div>
+              </div>  
+            </div>
+            <div class="panel" style="display: none;" id="new">
+              <div class="panel-heading head">
+                <div class="pull-right hidden-xs">
+                  <img class="mw20" src="/assets/x.png"/>
+                </div>
+                <span class="panel-title"> Add Question</span>
+              </div>
+              <div class="panel-body">
+                <form class="form-horizontal" role="form">
+                  <div class="row form-group">
+                    <div class="col-sm-2"> 
+                      <label class="control-label " for="inputSmall">Question</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <textarea class="form-control textarea-grow question1" id="textArea1" rows="4"></textarea>
+                    </div>
+                  </div>  
+                  <div class="row form-group">
+                    <div class="col-sm-2"> 
+                      <label class="control-label " for="inputSmall">Option_A</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input id="optiona1" class="form-control" type="text" placeholder="">
+                    </div>
+                  </div>  
+                  <div class="row form-group">
+                    <div class="col-sm-2"> 
+                      <label class="control-label " for="inputSmall">Option_B</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input id="optionb1" class="form-control" type="text" placeholder="">
+                    </div>
+                  </div>  
+                  <div class="row form-group">
+                    <div class="col-sm-2"> 
+                      <label class="control-label " for="inputSmall">Option_C</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input id="optionc1" class="form-control" type="text" placeholder="">
+                    </div>
+                  </div>  
+                  <div class="row form-group">
+                    <div class="col-sm-2"> 
+                      <label class="control-label " for="inputSmall">Option_D</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input id="optiond1" class="form-control" type="text" placeholder="">
+                    </div>
+                  </div>  
+                  <div class="row form-group">
+                    <div class="col-sm-2"> 
+                      <label class="control-label " for="inputSmall">ANS.</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input id="ans1" class="form-control" type="text" placeholder="">
+                    </div>
+                  </div>  
+                  <div class="row form-group">
+                    <div class=" col-sm-2">
+                      <label class="control-label " for="inputLarge">Ques_type</label>
+                    </div>
+                    <div class="col-sm-5">
+                      <select id="questype1" class="form-control control-label">
+                        <option>easy</option>
+                        <option>medium</option>
+                        <option>hard</option>
+                      </select>
+                    </div>
+                  </div> 
+                  <div class="row form-group"> 
+                    <div class=" col-sm-2">
+                      <label class="control-label " for="inputLarge">Status</label>
+                    </div>
+                    <div class="col-sm-5">      
+                      <select id="status1" class="form-control control-label">
+                        <option>Active</option>
+                        <option>Inactive</option>
+                      </select>
+                    </div>
+                  </div>  
+                  <div class="row form-group"> 
+                    <div style="float: right !important;" class="col-sm-3 form-group">
+                      <a class="btn btn-success  addsub ">submit</a>
+                    </div>
+                  </div>                 
+                </form>
+              </div>
+            </div>
+            <div class="panel" style="display: none;" id="edit">
+              <div class="panel-heading head">
+                <div class="pull-right hidden-xs">
+                  <img class="mw20" src="/assets/x.png"/>
+                </div>
+                <span class="panel-title"> Edit Question</span>
+              </div>
+              <div class="panel-body">
+                <form class="form-horizontal" role="form">
+                  <div class="row form-group">
+                    <div class="col-sm-2"> 
+                      <label class="control-label " for="inputSmall">Question</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <textarea class="form-control textarea-grow question" id="textArea1" rows="4"></textarea>
+                    </div>
+                  </div>  
+                  <div class="row form-group">
+                    <div class="col-sm-2"> 
+                      <label class="control-label " for="inputSmall">Option_A</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input id="optiona" class="form-control" type="text" placeholder="">
+                    </div>
+                  </div>  
+                  <div class="row form-group">
+                    <div class="col-sm-2"> 
+                      <label class="control-label " for="inputSmall">Option_B</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input id="optionb" class="form-control" type="text" placeholder="">
+                    </div>
+                  </div>  
+                  <div class="row form-group">
+                    <div class="col-sm-2"> 
+                      <label class="control-label " for="inputSmall">Option_C</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input id="optionc" class="form-control" type="text" placeholder="">
+                    </div>
+                  </div>  
+                  <div class="row form-group">
+                    <div class="col-sm-2"> 
+                      <label class="control-label " for="inputSmall">Option_D</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input id="optiond" class="form-control" type="text" placeholder="">
+                    </div>
+                  </div>  
+                  <div class="row form-group">
+                    <div class="col-sm-2"> 
+                      <label class="control-label " for="inputSmall">ANS.</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input id="ans" class="form-control" type="text" placeholder="">
+                    </div>
+                  </div>  
+                  <div class="row form-group">
+                    <div class=" col-sm-2">
+                      <label class="control-label " for="inputLarge">Ques_type</label>
+                    </div>
+                    <div class="col-sm-5">
+                      <select id="questype" class="form-control control-label">
+                        <option>easy</option>
+                        <option>medium</option>
+                        <option>hard</option>
+                      </select>
+                    </div>
+                  </div> 
+                  <div class="row form-group"> 
+                    <div class=" col-sm-2">
+                      <label class="control-label " for="inputLarge">Status</label>
+                    </div>
+                    <div class="col-sm-5">      
+                      <select id="status" class="form-control control-label">
+                        <option>Active</option>
+                        <option>Inactive</option>
+                      </select>
+                    </div>
+                  </div>  
+                  <div class="row form-group"> 
+                    <div style="float: right !important;" class="col-sm-3 form-group">
+                      <a class="btn btn-success  update ">submit</a>
+                    </div>
+                  </div>                 
+                </form>
+              </div>
+            </div>
+          <div>  
+        </section>
+      </section>
+    </div>
+  </body>
+  <script type="text/javascript">
+    jQuery(document).ready(function(){
+      var pageLoaded = new Question.pageLoaded();
+    });
+  </script>
+</html>

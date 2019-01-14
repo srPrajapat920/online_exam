@@ -9,13 +9,28 @@ SignUp.pageLoaded.prototype= {
   },
   postData:function(){
     $(".logout").hide()
-    $(".col-md-9 #Signup").click(function(){
-	    var firstname= $(".col-md-9 #Firstname").val();
-	    var lastname= $(".col-md-9 #Lastname").val();
-      var contact_no= $(".col-md-9 #Contact_no").val();
-      var email= $(".col-md-9 #Email").val();
-      var password= $(".col-md-9 #Password").val();
-      var level= $(".col-md-4 #Level").val();
+    $(".col-sm-9 #Signup").click(function(){
+	    var firstname= $(".col-sm-9 #Firstname").val();
+	    var lastname= $(".col-sm-9 #Lastname").val();
+      var contact_no= $(".col-sm-9 #Contact_no").val();
+      var email= $(".col-sm-9 #Email").val();
+      var password= $(".col-sm-9 #Password").val();
+      if(password.length<6){
+        $.notify({
+          icon: 'glyphicon glyphicon-warning-sign',
+          message:"password is too short",
+          target:'_blank',
+        },{
+          element:'body',
+          placement:{
+            form:"top",
+            align:"right"
+          },
+          type:"danger",
+          allow:"right"
+        });  
+      }
+      var level= $(".col-sm-4 #Level").val();
       var username= firstname+" "+lastname;
       var user={"username":username,"contact_no":contact_no,"email_id":email,"password":password,"level":level};
       $.ajax({
@@ -28,14 +43,28 @@ SignUp.pageLoaded.prototype= {
           console.log(result);
           window.open("/login","_self")
         },
-        error:function (){
-          alert("fill correct data ..!");
+        error:function (jqXHR, textStatus, errorThorwn){
+          var msg = jqXHR.responseJSON.errors.toSource(); 
+          msg = msg.replace(/[{()}]/g,"").replace(/[["]/g,'').replace(/]/g,'').replace(/:/g,'-')
+          $.notify({
+            icon: 'glyphicon glyphicon-warning-sign',
+            message:msg,
+            target:'_blank',
+          },{
+            element:'body',
+            placement:{
+              form:"top",
+              align:"right"
+            },
+            type:"danger",
+            allow:"right"
+          });
         }
 	    });
     });
   },
   signin:function(){
-    $(".col-md-9 #Signin").click(function(){
+    $(".col-sm-9 #SignIn").click(function(){
       window.open("/login","_self")
     })
   }

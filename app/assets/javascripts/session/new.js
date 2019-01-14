@@ -4,10 +4,14 @@ SignIn.pageLoaded = function(){
 }
 SignIn.pageLoaded.prototype= {
   initialize:function(){
+    this.url;
+    this.urlid;
     this.postData();
     this.signup();       
   },
   postData:function(){
+    url=window.location.href;
+    urlid = url.substring(url.lastIndexOf('/'));
     $(".logout").hide()
     $(".col-md-9 #SignIn").click(function(){
       var email= $(".col-md-9 #Email").val();
@@ -19,18 +23,41 @@ SignIn.pageLoaded.prototype= {
         format: "JSON",
         data: user,
         success:function(result){
-          console.log(result);
+          if(urlid=="/login"){
           window.open("/tests","_self")
+          }
+          else{
+            window.open("/subjects","_self")
+          }
         },
-        error: function (jqXHR, textStatus, errorThrown) {
-             alert("Error Code: " + jqXHR.status + ", Type:" + textStatus + ", Message: " + errorThrown);
-
+        error:function (jqXHR, textStatus, errorThorwn){
+          var msg = jqXHR.responseJSON.errors.toSource(); 
+          msg = msg.replace(/[{()}]/g,"").replace(/[["]/g,'').replace(/]/g,'').replace(/:/g,'-')
+          $.notify({
+            icon: 'glyphicon glyphicon-warning-sign',
+            message:msg,
+            target:'_blank',
+          },{
+            element:'body',
+            placement:{
+              form:"top",
+              align:"right"
+            },
+            type:"danger",
+            allow:"right"
+          });
         }
 	    });
     });
   },
-  signup:function(){
-    $(".col-md-9 #Signup").click(function(){
+  signup:function(){    
+    if(urlid=="/admin"){
+      $(".panel-title").html("Login");
+      $("#lastdiv").hide();
+      $(".col-md-9 .span").hide();
+      $("#SignIn").html("&nbsp Log In");
+    }
+    $("#lastdiv #Signup").click(function(){
       window.open("/","_self")
     })
   }

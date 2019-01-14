@@ -10,13 +10,13 @@ Home.pageLoaded.prototype= {
   getData:function() {
 	  $.ajax({
  		  type: "GET",
- 		  url: "/subjects",
+ 		  url: "/tests",
  		  dataType: "json",
  		  success: function(result){
         var data = result.subjects;
    		  $.each(data, function (i, item) {
-     		  var row = '<button class="alert alert-primary mr-3 subshow" value="'+item.id+'" style="font-size:25px;"role="alert">'+item.name+'</button>';
-          $(".panel .panel-body").append(row);
+     		  var row = '<button class="subshow ml20 " value="'+item.id+'" style=" all: unset; display:inline-block;"><div class="panel panel-tile bg-dark text-center br-a br-light"><div class="panel-body "><i class="glyphicon glyphicon-book text-muted fs45 br64 bg-dark dark p15 ph20 mt10"></i><h3>'+item.name+'</h3></div></div></button>';
+          $(".data").append(row);
    		  });
  		  },
  		  error: function (result) {
@@ -29,6 +29,20 @@ Home.pageLoaded.prototype= {
       var id= $(this).val();
       window.open("/tests/"+id,"_self")
     });
-    
+    $(document).on('click','.logout', function(){
+      if(confirm("are you sure..? logout")){
+        $.ajax({
+          type: 'GET',
+          url:'/logout',
+          dataType:'json',
+          success: function(result){
+            window.open("/login","_self")
+          }
+        });
+      };
+    });
+    $(document).on('click','.link', function(){
+      window.open("/tests","_self")
+    });
   },
 }

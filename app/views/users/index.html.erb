@@ -1,0 +1,40 @@
+      <%= render partial: "partial/adminheader" %>
+      <section id="content_wrapper" id="top">
+        <section id="content" class="table-layout">
+          <div class="tray tray-center"  style="height: 640px;">
+            <div class="panel" id="spy3">
+              <div class="panel-heading">
+                </span>Users</span>
+              </div>
+              <div class="panel-body pn">
+                <div class="bs-component">
+                  <table class="table table-hover table-responsive">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email_id</th>
+                        <th>Level</th>
+                        <th>type</th>
+                        <th>Contact_no</th>
+                        <th>Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody id="User">
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>  
+            </div>
+          <div>  
+        </section>
+      </section>
+    </div>
+  </body>
+  <script type="text/javascript">
+    jQuery(document).ready(function(){
+      var pageLoaded = new Users.pageLoaded();
+    });
+  </script>
+</html>

@@ -22,6 +22,8 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to(login_path)
+    render json: {}, status: :ok
+  rescue ActiveRecord::RecordNotFound => e
+    render json: { error: e.message }, status: :unprocessable_entity
   end
 end
