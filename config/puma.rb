@@ -32,10 +32,3 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> views
-=======
->>>>>>> 0a0b839732510a05b25ecabb5d1705d67c50e56a
