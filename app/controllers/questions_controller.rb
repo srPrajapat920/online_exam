@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 class QuestionsController < ApplicationController
-  before_action :logged_in, only: %i[index show]
-  before_action :admin_user, only: %i[edit update new destroy]
-
+  before_action :admin_user, only: [:index, :edit, :new, :show, :destroy]
   def new
     @question = Question.new
     respond_to do |format|

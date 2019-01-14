@@ -1,0 +1,49 @@
+
+    <%= render partial: "partial/header" %>
+     <div class="container mt40">    
+      <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 
+        col-sm-offset-2">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <div class="panel-title">Sign In</div>
+          </div>  
+          <div class="panel-body" >
+            <form id="signupform" class="form-horizontal" role="form">                
+              <div id="signupalert" style="display:none" class="alert alert-danger">
+                 <p>Error:</p>
+              </div>                      
+              <div class="form-group">
+                <label for="email" class="col-md-3 control-label">Email</label>
+                <div class="col-md-9">
+                  <input type="text" id="Email" class="form-control" name="email" placeholder="Email Address">
+                </div>
+              </div>     
+              <div class="form-group">
+                <label for="password" class="col-md-3 control-label">Password</label>
+                <div class="col-md-9">
+                  <input type="password" id="Password" class="form-control" name="passwd" placeholder="Password">
+                </div>
+              </div>
+              <div class="form-group">
+                                    <!-- Button -->                                        
+                <div class="col-md-offset-3 col-md-9">
+                  <button id="SignIn" type="button" class="btn btn-info">&nbsp Sign In</button>
+                </div>
+              </div>                
+              <div style="border-top: 1px solid #999; padding-top:20px" id="lastdiv" class="form-group">
+                <p>Haven't yet Registered?
+                  <a href="" id="Signup"title="Sign In">Sign up here</a>
+                </p>                                                  
+              </div>
+            </form>
+          </div>
+        </div>        
+      </div> 
+    </div>
+  </body>
+    <script type="text/javascript">
+    jQuery(document).ready(function(){
+      var pageLoaded = new SignIn.pageLoaded();
+    });
+  </script>
+</html>

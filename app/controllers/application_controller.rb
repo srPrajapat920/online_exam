@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  protect_from_forgery
+  include SessionsHelper
   def log_in(user)
     session[:user_id] = user.id
   end
@@ -23,6 +25,6 @@ class ApplicationController < ActionController::Base
   end
 
   def admin_user
-    redirect_to(login_path) unless  !current_user.nil? ||current_user.admin?
+    redirect_to(login_path) unless  current_user.try(:admin?)
   end
 end

@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class QuestionsetsController < ApplicationController
-  before_action :logged_in, only: %i[index show]
-  before_action :admin_user, only: %i[edit new destroy]
+  before_action :admin_user, only: [:index, :edit, :new, :show, :destroy]
 
   def new
     @questionset = Questionset.new

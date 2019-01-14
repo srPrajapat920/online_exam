@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ExamsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :logged_in, only: [:new]
   before_action :admin_user, only: [:index, :show, :edit, :update, :destroy]
   def new
@@ -41,7 +42,10 @@ class ExamsController < ApplicationController
 
   def index
     @exams = Exam.all
-    render json: { exames: @exams }, status: :ok
+    respond_to do |format|
+      format.html {}
+      format.json { render json: { exams: @exams }, status: :ok }
+    end
   end
 
   def edit
@@ -57,9 +61,7 @@ class ExamsController < ApplicationController
   def update
     @exam = Exam.find(params[:id])
     if @exam.update(exam_params)
-
       render json: { exam: @exam }, status: :ok
-
     else
       render json: @exam.errors, status: :unprocessable_entity
     end
@@ -70,6 +72,6 @@ class ExamsController < ApplicationController
   private
 
   def exam_params
-    params.require(:exam).permit(:total_marks, :attended_ques, :user_id, :questionset_id)
+    params.permit(:total_marks, :attended_ques, :user_id, :questionset_id)
   end
 end

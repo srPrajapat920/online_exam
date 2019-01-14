@@ -3,12 +3,12 @@
 class User < ApplicationRecord
   attr_accessor :password
   has_many :exam
-  validates :username, :email_id, :contact_no, :password, :level, presence: true
+  validates :username, :email_id, :contact_no, :level, presence: true
   validates :email_id, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
   validates :level, inclusion: { in: %w[fresher intermediate experienced] }
   validates :email_id, uniqueness: true
   validates :contact_no, length: { is: 10 }, numericality: { only_integer: true }
-  validates :password, length: { in: 6..10 }
+  # validates :password, length: { in: 6..10 }
   before_save :valid_email_id
   before_save :encrypt_password
 

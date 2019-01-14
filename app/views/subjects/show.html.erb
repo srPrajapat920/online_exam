@@ -1,0 +1,180 @@
+<%= render partial: "partial/adminheader" %>
+      <section id="content_wrapper" id="top">
+        <section id="content" class="table-layout">
+          <div class="tray tray-center"  style="height: 640px;">
+            <h4 class="headtop"></h4>
+            <div class="panel" id="spy3">
+              <div class="panel-heading">
+                <span class="panel-title">
+                <div class="pull-right hidden-xs">    
+                  <a class="label label-success" id="newsub"><i class="glyphicon glyphicon-plus"></i>Add QuestionSet</a>
+                </div>  
+                </span>QuestionSets</span>
+              </div>
+              <div class="panel-body pn">
+                <div class="bs-component">
+                  <table class="table table-hover table-responsive">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Level</th>
+                        <th>No.of Ques.</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                        <th>Marks-per-Ques.</th>
+                        <th>show</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody id="Subject">
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>  
+            </div>
+            <div class="panel" style="display: none;" id="new">
+              <div class="panel-heading head">
+                <div class="pull-right hidden-xs">
+                  <img class="mw20" src="/assets/x.png"/>
+                </div>
+                <span class="panel-title"> Add QuestionSets</span>
+              </div>
+              <div class="panel-body">
+                <form class="form-horizontal" role="form">
+                  <div class="row form-group">
+                    <div class="col-sm-1"> 
+                      <label class="control-label " for="inputSmall">Name</label>
+                    </div>
+                    <div class="col-sm-5">
+                      <input id="name1" class="form-control" type="text" placeholder="">
+                    </div>
+                    <div class=" col-sm-1">
+                      <label class="control-label pl10" for="inputLarge">Level</label>
+                    </div>
+                    <div class="col-sm-5">
+                      <select id="level1" class="form-control control-label">
+                        <option>fresher</option>
+                        <option>intermediate</option>
+                        <option>experienced</option>
+                      </select>
+                    </div>
+                  </div>  
+                  <div class="row form-group">
+                    <div class="col-sm-1">
+                      <label class="control-label pl10" for="inputLarge">No of Ques.</label>
+                    </div>
+                    <div class="col-sm-5">
+                      <input type="text" id="NoOfQues1" class="form-control" placeholder="">
+                    </div>  
+                    <div class="col-sm-1">
+                      <label class="control-label pl10" for="inputLarge">Time (in min.)</label>
+                    </div> 
+                    <div class="col-sm-5">
+                      <input type="text" id="time1" class="form-control" placeholder="">
+                    </div> 
+                  </div>
+                  <div class="row form-group">
+                    <div class=" col-sm-1">
+                      <label class="control-label pl10" for="inputLarge">Status</label>
+                    </div>
+                    <div class="col-sm-5">      
+                      <select id="status1" class="form-control control-label">
+                        <option>Active</option>
+                        <option>Inactive</option>
+                      </select>
+                    </div>
+                    <div class="col-sm-1">
+                      <label class="control-label pl10" for="inputLarge">Marks per Ques</label><br>
+                    </div>
+                    <div class="col-sm-5">  
+                      <input type="text" id="marks1" class="form-control" placeholder="">
+                    </div> 
+                  </div>
+                  <div class="row form-group"> 
+                    <div style="float: right !important;" class="col-sm-3 form-group">
+                      <a class="btn btn-success  addsub ">submit</a>
+                    </div>
+                  </div>                 
+                </form>
+              </div>
+            </div>
+            <div class="panel" style="display: none;" id="edit">
+              <div class="panel-heading head">
+                <div class="pull-right hidden-xs">
+                  <img class="mw20" src="/assets/x.png"/>
+                </div>
+                <span class="panel-title"> Edit QuestionSets</span>
+              </div>
+              <div class="panel-body">
+                <form class="form-horizontal" role="form">
+                  <div class="row form-group">
+                    <div class="col-sm-1"> 
+                      <label class="control-label " for="inputSmall">Name</label>
+                    </div>
+                    <div class="col-sm-5">
+                      <input id="name" class="form-control" type="text" placeholder="">
+                    </div>
+                    <div class=" col-sm-1">
+                      <label class="control-label pl10" for="inputLarge">Level</label>
+                    </div>
+                    <div class="col-sm-5">
+                      <select id="level"class="form-control ">
+                        <option>fresher</option>
+                        <option>intermediate</option>
+                        <option>experienced</option>
+                      </select>
+                    </div>
+                  </div>  
+                  <div class="row form-group">
+                    <div class="col-sm-1">
+                      <label class="control-label pl10" for="inputLarge">No of Ques.</label>
+                    </div>
+                    <div class="col-sm-5">
+                      <input type="text" id="NoOfQues" class="form-control" placeholder="">
+                    </div>  
+                    <div class="col-sm-1">
+                      <label class="control-label pl10" for="inputLarge">Time (in min.)</label>
+                    </div> 
+                    <div class="col-sm-5">
+                      <input type="text" id="time" class="form-control" placeholder="">
+                    </div> 
+                  </div>
+                  <div class="row form-group">
+                    <div class=" col-sm-1">
+                      <label class="control-label pl10" for="inputLarge">Status</label>
+                    </div>
+                    <div class="col-sm-5">      
+                      <select id="status" class="form-control">
+                        <option>Active</option>
+                        <option>Inactive</option>
+                      </select>
+                    </div>
+                    <div class="col-sm-1">
+                      <label class="control-label pl10" for="inputLarge">Marks per Ques</label><br>
+                    </div>
+                    <div class="col-sm-5">  
+                      <input type="text" id="marks" class="form-control" placeholder="">
+                    </div> 
+                  </div>
+                  <div class="row form-group"> 
+                    <div style="float: right !important;"class="col-sm-3 form-group">
+                      <a class="btn btn-success  update">submit</a>
+                    </div>
+                  </div>                 
+                </form>
+              </div>
+            </div>
+          <div>  
+        </section>
+      </section>
+    </div>
+  </body>
+  <script type="text/javascript">
+    jQuery(document).ready(function(){
+      var pageLoaded = new Subjectshow.pageLoaded();
+    });
+  </script>
+</html>

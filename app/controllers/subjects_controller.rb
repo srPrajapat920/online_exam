@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 class SubjectsController < ApplicationController
-  before_action :logged_in, only: %i[index show]
-  before_action :admin_user, only: %i[edit new destroy]
-
+  before_action :admin_user, only: [:index, :edit, :new, :show, :destroy]
   def new
     @subject = Subject.new
     respond_to do |format|
@@ -41,7 +39,10 @@ class SubjectsController < ApplicationController
 
   def index
     @subjects = Subject.all
-    render json: { subjects: @subjects }, status: :ok
+    respond_to do |format|
+      format.html {}
+      format.json { render json: { subjects: @subjects }, status: :ok }
+    end
   end
 
   def edit

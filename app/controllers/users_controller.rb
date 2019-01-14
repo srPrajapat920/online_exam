@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :logged_in, only: %i[show edit]
-  before_action :admin_user, only: %i[index edit destroy]
+  before_action :logged_in, only: [:show, :edit]
+  before_action :admin_user, only: [:index, :destroy]
   def new
     @user = User.new
     respond_to do |format|
@@ -14,10 +14,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      render json: { user: @user }, status: :created
+      respond_to do |format|
+        format.json { render json: { user: @user }, status: :created }
+      end
     else
-      render json: { errors: @user.errors }, status: :unprocessable_entity
-    end
+      respond_to do |format|
+        format.json {render json: { errors: @user.errors }, status: :unprocessable_entity}
+      end
+    end  
   end
 
   def show
@@ -40,7 +44,10 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    render json: { useres: @users }, status: :ok
+    respond_to do |format|
+      format.html {}
+      format.json { render json: { users: @users }, status: :ok }
+    end
   end
 
   def edit
@@ -56,9 +63,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-
       render json: { user: @user }, status: :ok
-
     else
       render json: @user.errors, status: :unprocessable_entity
     end
@@ -69,6 +74,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :email_id, :password, :contact_no, :level)
+    params.permit(:username, :email_id, :password, :contact_no, :level, :admin, :id)
   end
 end
