@@ -39,8 +39,6 @@ SignUp.pageLoaded.prototype= {
         format: "JSON",
         data: user,
         success:function(result){
-          alert(result);
-          console.log(result);
           window.open("/login","_self")
         },
         error:function (jqXHR, textStatus, errorThorwn){
