@@ -75,7 +75,7 @@ Question.pageLoaded.prototype= {
           $("#spy3 .newsub").hide();
         },
         error:function (jqXHR, textStatus, errorThorwn){
-          var msg = jqXHR.responseJSON.errors.toSource(); 
+          var msg = JSON.stringify(jqXHR.responseJSON.errors); 
           msg = msg.replace(/[{()}]/g,"").replace(/[["]/g,'').replace(/]/g,'').replace(/:/g,'-')
           $.notify({
             icon: 'glyphicon glyphicon-warning-sign',
@@ -148,7 +148,7 @@ Question.pageLoaded.prototype= {
           $("#spy3 .newsub").hide();
         },
         error:function (jqXHR, textStatus, errorThorwn){
-          var msg = jqXHR.responseJSON.errors.toSource(); 
+          var msg = JSON.stringify(jqXHR.responseJSON.errors); 
           msg = msg.replace(/[{()}]/g,"").replace(/[["]/g,'').replace(/]/g,'').replace(/:/g,'-')
           $.notify({
             icon: 'glyphicon glyphicon-warning-sign',
@@ -181,7 +181,7 @@ Question.pageLoaded.prototype= {
           $("#spy3 .newsub").hide();
         },
         error:function (jqXHR, textStatus, errorThorwn){
-          var msg = jqXHR.responseJSON.errors.toSource(); 
+          var msg = JSON.stringify(jqXHR.responseJSON.errors);
           msg = msg.replace(/[{()}]/g,"").replace(/[["]/g,'').replace(/]/g,'').replace(/:/g,'-')
           $.notify({
             icon: 'glyphicon glyphicon-warning-sign',
@@ -212,7 +212,7 @@ Question.pageLoaded.prototype= {
           $("#spy3 .newsub").hide();
         },
         error:function (jqXHR, textStatus, errorThorwn){
-          var msg = jqXHR.responseJSON.errors.toSource(); 
+          var msg = JSON.stringify(jqXHR.responseJSON.errors);
           msg = msg.replace(/[{()}]/g,"").replace(/[["]/g,'').replace(/]/g,'').replace(/:/g,'-')
           $.notify({
             icon: 'glyphicon glyphicon-warning-sign',

@@ -33,7 +33,7 @@ SignIn.pageLoaded.prototype= {
         error:function (jqXHR, textStatus, errorThorwn){
           $.notify({
             icon: 'glyphicon glyphicon-warning-sign',
-            message:"Incorrect email_id or password",
+            message:"Incorrect combination of email_id and password",
             target:'_blank',
           },{
             element:'body',
