@@ -31,6 +31,7 @@ SignIn.pageLoaded.prototype= {
           }
         },
         error:function (jqXHR, textStatus, errorThorwn){
+          alert("hello");
           $.notify({
             icon: 'glyphicon glyphicon-warning-sign',
             message:"Incorrect combination of email_id and password",

@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
     else
       flash.now[:danger] = 'Invalid email/password combination'
       redirect_to(login_path)
-      render json: { errors: @subject.errors }, status: :unprocessable_entity
+      render json: { errors: user.errors }, status: :unprocessable_entity
     end
   end
 

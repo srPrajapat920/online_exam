@@ -13,6 +13,12 @@
       .link{
         cursor: pointer;
       }
+      .logout{
+        cursor: pointer;
+      }
+      .log{
+         cursor: pointer!important;
+      }
       h3{
         color: white;
       }
@@ -76,7 +82,7 @@
         </div>
         <ul class=" log nav navbar-nav navbar-right">      
           <li class="dropdown menu-merge">
-            <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+            <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
               <%if current_user %>
                 <img src="/assets/avtar.png" alt="avatar" class="mw45 br64">
                 <b class=""><%= current_user.username %></b>
@@ -85,7 +91,7 @@
             </a>
             <ul class="dropdown-menu"  role="menu">
               <li>
-                <a href=""class="logout">Logout</a>
+                <a class="logout">Logout</a>
               </li>
             </ul>
           </li>
